@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Your Dashboard</h1>
+  {{#each posts as |post|}}
+    <div class="post-edit">
+      <form class="edit-post-form" data-id="{{this.id}}">
+        <input type="text" name="title" value="{{post.title}}" />
+        <textarea name="content">{{post.content}}</textarea>
+        <button type="submit">Update Post</button> 
+        <button type="button" class="delete" data-id="{{post.id}}">Delete</button>
+      </form>
+    </div>
+  {{/each}}
+  <div class="button-container">
+    <button id="new-post-btn" class="btn">Create New Post</button>
+  </div>
+</div>
+
+<script src="/js/dashboard.js"></script>
